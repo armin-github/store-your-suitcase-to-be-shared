@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
+}
+
+datasource db {
+  // locally
+  // provider = "sqlite"
+  // url      = env("DATABASE_URL")
+
+  provider = "postgresql"
+
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User {
+  id                String     @id @default(cuid())
+  email             String     @unique
+  hashedPassword    String
+  hasLifetimeAccess Boolean    @default(false)
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  suitcases         Suitcase[]
+}
+
+model Suitcase {
+  id        String   @id @default(cuid())
+  length    Int
+  width     Int
+  height    Int
+  weight    Int
+  color     String
+  ownerName String
+  notes     String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

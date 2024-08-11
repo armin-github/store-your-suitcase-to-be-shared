@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../mol-bio-techniques/.idea/mol-bio-techniques.iml" filepath="$PROJECT_DIR$/../mol-bio-techniques/.idea/mol-bio-techniques.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/petsoft-project.iml" filepath="$PROJECT_DIR$/.idea/petsoft-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../text-analytics-refurbished/.idea/text-analytics-refurbished.iml" filepath="$PROJECT_DIR$/../text-analytics-refurbished/.idea/text-analytics-refurbished.iml" />
+    </modules>
+  </component>
+</project>
